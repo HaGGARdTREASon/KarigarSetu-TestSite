@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stories</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Algerian', algerian;
+      margin: 32px;
+      border-radius: 64px;
+      font-size: 32px;
+      padding: 0px;
+      background-image: url('11.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-color 0.4s ease-in-out;
+    }
+
+    header {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: brown;
+      margin-bottom: 8px;
+      border-radius: 128px;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 64px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.74);
+    }
+     
+    .logo {
+            font-size: 64px;
+            margin-bottom: 16px;
+            font-weight: bold;
+            color: #8b3c1f;
+        }
+
+    .logo {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid #333;
+    }
+
+    main {
+      display: flex;
+      padding: 40px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      flex: 1;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    /* Popup Styling */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .popup textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 8px;
+    }
+
+    .popup button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Popup Overlay */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>Stories</div>
+    <nav>
+    </nav>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+    </aside>
+
+    <section class="gallery">
+      <div class="card" onclick="showPopup('The Weaver of Varanasi')">
+        <img src="20.jpg" alt="Story Image" />
+        <div class="overlay">The Weaver of Varanasi  </div>
+      </div>
+      <div class="card" onclick="showPopup('The Potter of Rajasthan')">
+        <img src="21.jpg" alt="Story Image" />
+        <div class="overlay">The Potter of Rajasthan</div>
+      </div>
+      <div class="card" onclick="showPopup('The Embroidery Artist of Kutch')">
+        <img src="22.jpg" alt="Story Image" />
+        <div class="overlay">The Embroidery Artist of Kutch</div>
+      </div>
+      <div class="card" onclick="showPopup('The Bamboo Weaver of Assam')">
+        <img src="23.jpg" alt="Story Image" />
+        <div class="overlay">The Bamboo Weaver of Assam</div>
+      </div>
+      <div class="card" onclick="showPopup('The Block Printer of Jaipur')">
+        <img src="24.jpg" alt="Story Image" />
+        <div class="overlay">The Block Printer of Jaipur</div>
+      </div>
+      <div class="card" onclick="showPopup('The Jute Weaver of West Bengal')">
+        <img src="25.jpg" alt="Story Image" />
+        <div class="overlay">The Jute Weaver of West Bengal</div>
+      </div>
+      <div class="card" onclick="showPopup('The Carpet Weaver of Kashmir')">
+        <img src="26.jpg" alt="Story Image" />
+        <div class="overlay">The Carpet Weaver of Kashmir</div>
+      </div>
+      <div class="card" onclick="showPopup('The Beadworker of Tamil Nadu')">
+        <img src="27.jpg" alt="Story Image" />
+        <div class="overlay">The Beadworker of Tamil Nadu</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Popup Overlay -->
+  <div class="popup-overlay" onclick="closePopup()"></div>
+
+  <!-- Popup Box -->
+  <div class="popup" id="popup">
+    <textarea id="popup-text"></textarea>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <footer>
+    <div class="footer-column">
+      <h3></h3>
+      <p></p>
+    </div>
+    <div class="footer-column">
+      <h3></h3>
+      <p></p>
+    </div>
+    <div class="footer-column">
+      <h3></h3>
+      <p></p>
+    </div>
+    <div class="footer-column">
+      <h3></h3>
+      <p></p>
+    </div>
+  </footer>
+
+  <script>
+    function showPopup(text) {
+      document.querySelector('.popup-overlay').style.display = 'block';
+      document.querySelector('.popup').style.display = 'flex';
+      document.getElementById('popup-text').value = text;
+    }
+
+    function closePopup() {
+      document.querySelector('.popup-overlay').style.display = 'none';
+      document.querySelector('.popup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

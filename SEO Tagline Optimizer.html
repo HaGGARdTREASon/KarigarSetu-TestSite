@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tagline Generator</title>
+  <style>
+    body {
+      font-family: Roboto;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url("11.jpg"); /* Replace with actual background */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 20px;
+      border-radius: 64px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    input {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    button {
+      margin: 10px 0;
+      background: linear-gradient(90deg, #ff7e5f, #feb47b);
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 32px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Tagline Generator</h3>
+    <input type="text" id="product-input" placeholder="Enter a word or keyword">
+    <button onclick="generateTagline()">Generate Tagline</button>
+    <p id="generated-tagline"></p>
+  </div>
+
+  <script>
+    // Function to generate a tagline based on the word entered
+    function generateTagline() {
+      const product = document.getElementById('product-input').value.toLowerCase().trim();
+
+      if (!product) {
+        document.getElementById('generated-tagline').innerText = "Please enter a word to generate a tagline.";
+        return;
+      }
+
+      // Indian and Desi tagline generation based on the entered word
+      const desiTaglines = [
+  `Apni mitti ka ehsaas har ${product} mein basa hai.`,
+  `${product}: Bharat ki kahaniyon ka ek hissa.`,
+  `Swadeshi shaan, swadeshi maan, har ${product} ke saath.`,
+  `Rangon ki duniya mein ek apna rang, jaise ${product}.`,
+  `${product} - Virasat ki kahani jo har dil ko chhoo le.`,
+  `Har saanjh mein apne desh ki pehchaan, jaise ${product}.`,
+  `Apne sanskaar, apni sanskriti, har ${product} ke saath.`,
+  `Desh ki pehchaan, aapke har din mein - ${product}.`,
+  `Jise chhoote dil bhar aaye, wo hai ${product}.`,
+  `${product}: Bharat ki dharohar, aapke jeevan ka hissa.`,
+  `Mitti ki mahak aur virasat ka rang, har ${product} mein.`,
+  `Aapka sukh har ${product} mein basa hai.`,
+  `Swadeshi sukh, apne rangon ke saath - ${product}.`,
+  `Apne desh ki yaadon ka rang, har ${product} ke saath.`,
+  `${product}: Mitti se juda, dil se apna.`,
+  `Bharat ki sanskriti ka ek hissa, har ${product}.`,
+  `${product} - Desh ki kahaniyon mein ek naye pankh.`,
+  `Har kadam apne virasat ka ehsaas dilaye, jaise ${product}.`,
+  `Jab bhi dil bhar aaye, yaad aaye ${product}.`,
+  `${product}: Ek chhoti si kahani jo desh se judi ho.`,
+  `Apne rangon se bharat ka rang bharne ka ek aur tareeka - ${product}.`,
+  `Apne virasat se judne ka sukh, har ${product} mein.`,
+  `${product} - Ek chhoti si yaad, jo sanskriti se judi ho.`,
+  `Apne sanskaar, apni kahani, har ${product} ke saath.`,
+  `Desh ki shaan, apne rangon ke saath - ${product}.`,
+  `${product}: Har swaad mein ek naye kahani ka ehsaas.`,
+  `Bharatiya sanskriti ka roop, har ${product} ke saath.`,
+  `Desh ki mitti ka ek hissa - ${product}.`,
+  `Apna rang, apna swabhimaan, har ${product} mein.`,
+  `Jeevan ke har mod par ek yaad, jaise ${product}.`,
+  `${product}: Rang bhare pal jo sanskriti se jude hain.`,
+  `Desh ki virasat ka rang, har ${product} mein chhupaa hai.`,
+  `${product}: Ek kahani jo apni zameen se judi hai.`,
+  `Jahan bhi jao, apne desh ka ek rang saath rakho, jaise ${product}.`,
+  `Apne rangon ka ek apna pehchaan, har ${product} mein.`,
+  `Swadeshi swabhimaan, apne sanskriti ke saath - ${product}.`,
+  `${product}: Virasat ka ehsaas, har dil mein basa hai.`,
+  `Jab bhi apni mitti ki yaad aaye, yaad aaye ${product}.`,
+  `${product} - Rangon se bhara ek virasat ka pal.`,
+];
+
+      // Pick a random tagline from the list
+      const randomTagline = desiTaglines[Math.floor(Math.random() * desiTaglines.length)];
+
+      document.getElementById('generated-tagline').innerText = `Suggested Tagline: "${randomTagline}"`;
+    }
+  </script>
+</body>
+</html>

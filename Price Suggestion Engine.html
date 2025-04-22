@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Price Suggestion Engine</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Roboto;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url("11.jpg"); /* Use the same background as previous page */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 20px;
+      border-radius: 64px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    input {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    button {
+      margin: 10px 0;
+      background: linear-gradient(90deg, #ff7e5f, #feb47b);
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 32px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Price Suggestion Engine</h3>
+    <input type="text" id="price-keywords" placeholder="Enter handcrafted product (e.g. terracotta pottery)">
+    <button onclick="suggestPrice()">Suggest Price</button>
+    <p id="suggested-price"></p>
+  </div>
+
+  <script>
+  function suggestPrice() {
+    const keyword = document.getElementById('price-keywords').value.toLowerCase().trim();
+
+    let price = 0;
+
+    if (keyword.includes("soap")) {
+      price = 250;
+    } else if (keyword.includes("incense holder")) {
+      price = 300;
+    } else if (keyword.includes("handmade candle")) {
+      price = 350;
+    } else if (keyword.includes("channapatna toy")) {
+      price = 450;
+    } else if (keyword.includes("earrings") || keyword.includes("bracelet")) {
+      price = 700;
+    } else if (keyword.includes("jewelry") || keyword.includes("jewellery")) {
+      price = 1200;
+    } else if (keyword.includes("basket")) {
+      price = 1500;
+    } else if (keyword.includes("wooden carving")) {
+      price = 1800;
+    } else if (keyword.includes("pottery") || keyword.includes("terracotta")) {
+      price = 2000;
+    } else if (keyword.includes("painting") || keyword.includes("madhubani") || keyword.includes("warli")) {
+      price = 2200;
+    } else if (keyword.includes("embroidery") || keyword.includes("embroidered")) {
+      price = 2400;
+    } else if (keyword.includes("carving")) {
+      price = 2600;
+    } else if (keyword.includes("khadi")) {
+      price = 2800;
+    } else if (keyword.includes("sculpture") || keyword.includes("idol")) {
+      price = 3200;
+    } else if (keyword.includes("shawl") || keyword.includes("pashmina")) {
+      price = 3500;
+    } else if (keyword.includes("saree") || keyword.includes("handloom")) {
+      price = 5000;
+    } else if (keyword.includes("brass") || keyword.includes("metal art")) {
+      price = 4200;
+    } else if (keyword.includes("dokra")) {
+      price = 4500;
+    } else if (keyword.includes("mirror work") || keyword.includes("kutch work")) {
+      price = 3800;
+    } else if (keyword.includes("banarasi")) {
+      price = 6000;
+    } else if (keyword.includes("stone carving")) {
+      price = 6500;
+    } else if (keyword.includes("wooden furniture")) {
+      price = 7500;
+    } else if (keyword.includes("jute bag")) {
+      price = 900;
+    } else if (keyword.includes("handwoven mat")) {
+      price = 1100;
+    } else if (keyword.includes("ceramic mug") || keyword.includes("ceramic")) {
+      price = 1300;
+    } else if (keyword.includes("bamboo lamp")) {
+      price = 1700;
+    } else if (keyword.includes("wall hanging") || keyword.includes("tapestry")) {
+      price = 2000;
+    } else if (keyword.includes("handpainted box")) {
+      price = 2100;
+    } else if (keyword.includes("marble")) {
+      price = 5500;
+    } else if (keyword.includes("kalamkari")) {
+      price = 2900;
+    } else if (keyword.includes("phulkari")) {
+      price = 3100;
+    } else if (keyword.includes("pattachitra")) {
+      price = 4700;
+    } else if (keyword.includes("blue pottery")) {
+      price = 3300;
+    } else if (keyword.includes("tribal art")) {
+      price = 2300;
+    } else if (keyword.includes("metal figurine")) {
+      price = 5100;
+    } else {
+      // fallback dynamic price range
+      const fallbackMin = 1500;
+      const fallbackMax = 4000;
+      price = Math.floor(Math.random() * (fallbackMax - fallbackMin + 1)) + fallbackMin;
+    }
+
+    document.getElementById('suggested-price').innerText = `Suggested Price: ₹${price}`;
+  }
+
+    // Price ranges for various types of products
+    const priceRanges = {
+      "small items": { min: 200, max: 800 },       // Small, low-cost handmade items like soap, incense holders, etc.
+      "medium items": { min: 800, max: 3000 },     // Medium-cost handmade products like baskets, pottery, jewelry, etc.
+      "large items": { min: 3000, max: 8000 },     // High-cost handmade items like sarees, shawls, large sculptures, etc.
+    };
+
+    // Function to suggest a price based on the product keyword
+    function suggestPrice() {
+      const keyword = document.getElementById('price-keywords').value.toLowerCase().trim();
+      
+      // Define keywords and their corresponding categories
+      const categories = {
+        "soap": "small items",
+        "incense holder": "small items",
+        "handmade candle": "small items",
+        "jewelry": "medium items",
+        "pottery": "medium items",
+        "painting": "medium items",
+        "basket": "medium items",
+        "sculpture": "large items",
+        "shawl": "large items",
+        "saree": "large items",
+        "textiles": "large items",
+        "carving": "medium items",
+        "wooden": "medium items",
+        "brass": "medium items",
+        "terracotta": "medium items",
+        "pashmina": "large items",
+        "handloom": "large items",
+        "embroidered": "medium items",
+        "channapatna": "small items",
+        "khadi": "medium items"
+      };
+
+      // Default category if no specific match is found
+      let category = "medium items";  // Fallback category
+
+      // Check if the keyword matches any known product category
+      for (let product in categories) {
+        if (keyword.includes(product)) {
+          category = categories[product];
+          break;
+        }
+      }
+
+      // Generate a random price based on the selected category
+      const range = priceRanges[category];
+      const price = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+
+      // Display the suggested price
+      document.getElementById('suggested-price').innerText = `Suggested Price: ₹${price}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Name Generator</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Century Gothic;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("11.jpg"); /* Replace this with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.3); /* Translucent white background */
+            padding: 20px;
+            border-radius: 64px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+            text-align: center;
+            animation: fadeIn 0.3s ease-in-out; /* Fade-in animation */
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 32px; /* Rounded corners */
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+        button {
+            margin: 10px 0;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Dynamic gradient */
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 32px; /* Rounded corners */
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+        }
+        button:hover {
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Product Name Generator</h3>
+        <input type="text" id="name-input" placeholder="Enter keywords (e.g., handmade soap)">
+        <button onclick="generateName()">Generate Name</button>
+        <p id="generated-name"></p>
+    </div>
+
+    <script>
+        function generateName() {
+            const keywords = document.getElementById('name-input').value.trim();
+            if (!keywords) {
+                document.getElementById('generated-name').innerText = "Please enter some keywords.";
+                return;
+            }
+
+            const indianWords1 = [
+                "Karigar", "Kala", "Desi", "Bharat", "Shilp", "Hunar", "Haath", "Gram", "Udyog",
+                "Sansaar", "Bazaar", "Swadeshi", "Jeevan", "Setu", "Mitra", "Mandir", "Nirmaan",
+                "Vastra", "Saanjh", "Rang", "Dhaga", "Kalaakriti", "Lok", "Sanskriti", "Utsav",
+                "Bandhan", "Kriti", "Rachna", "Gharana", "Kaarigari", "Saathi", "Milan", "Sabhyata"
+            ];
+
+            const indianWords2 = [
+                "Setu", "Sansaar", "Bazaar", "Kart", "Adda", "Mitra", "Junction", "Nest", "Hub",
+                "Corner", "Mart", "Dukaan", "Saathi", "Express", "Vastra", "Milan", "Manch",
+                "Udyog", "Point", "Lok", "Mandap", "Kendra", "Vihar", "Gully", "Marg", "Yatra"
+            ];
+
+            const nameIdeas = [];
+
+            // Generate Indian-style name suggestions
+            for (let word1 of indianWords1) {
+                for (let word2 of indianWords2) {
+                    nameIdeas.push(`${word1}${word2}`);
+                    nameIdeas.push(`${word1}${keywords}`);
+                    nameIdeas.push(`${keywords}${word2}`);
+                }
+            }
+
+            const randomName = nameIdeas[Math.floor(Math.random() * nameIdeas.length)];
+            document.getElementById('generated-name').innerText = `Suggested Name: ${randomName}`;
+        }
+    </script>
+</body>
+</html>

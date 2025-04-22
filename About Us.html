@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KarigarSetu</title>
+    <style>
+        body {
+            font-family: Roboto, Roboto;
+            margin: 0;
+            padding: 0;
+            background-color: #F9F9F9;
+        }
+        header {
+            background-color: rgb(249, 249, 249, 1.0);
+            color: #564111;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-image {
+            height: 128px;
+            margin-left: 20px;
+        }
+        .header-title {
+            text-align: left;
+            flex-grow: 1;
+            font-size: 48px;
+        }
+        section {
+            text-align: center;
+        }
+        .background-image {
+            width: 100%;
+            height: 1000px;
+            background: url('10.jpg')center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+        }
+        .translucent-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 64px;
+            text-align: center;
+            font-size: 24px;
+            color: #564111;
+            width: 80%;
+            margin-bottom: 4px;
+        }
+        .images-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .modern-clear-btn {
+            padding: 12px 24px;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .modern-clear-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="header-image" src="Logo.jpg" alt="Header Image">
+        <h1 class="header-title">About Us</h1>
+    </header>
+    <section>
+        <div class="background-image">
+            <div class="translucent-box">
+                <p>At KarigarSetu, we’re on a heartfelt mission to uplift local artisans by bridging the gap between traditional craftsmanship and modern technology.</p>
+                <p>Across India, countless talented karigars (artisans) create exquisite handmade products — each piece a reflection of heritage and dedication. Yet, many struggle to market their work in today’s digital world.</p>
+                <p>KarigarSetu acts as the bridge, empowering artisans with powerful tools to simplify marketing and take control of their businesses:</p>
+                <ul>
+                    <li><strong>Product Name Generator:</strong> Create elegant, market-friendly names that capture the essence of your craft.</li>
+                    <li><strong>Price Suggestion Engine:</strong> Fair and competitive pricing based on craftsmanship and trends.</li>
+                    <li><strong>SEO & Tagline Optimizer:</strong> Smart suggestions for keywords, tags, and descriptions to make your work stand out online.</li>
+                </ul>
+                <p>We aim to take Indian craftsmanship global — one handmade product at a time.</p>
+            </div>
+        </div>
+    </section>
+    <section class="images-section">
+        <button class="modern-clear-btn" onclick="redirect()">Go Back to Home Page</button>
+    </section>
+    <script>
+        function redirect() {
+            window.location.href = "home.html";
+        }
+    </script>
+</body>
+</html>

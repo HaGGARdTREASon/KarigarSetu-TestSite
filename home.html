@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KarigarSetu</title>
+    <style>
+       body {
+      font-family: 'Algerian', algerian;
+      margin: 64px;
+      padding: 0px;
+      background-image: url('11.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-color 0.4s ease-in-out;
+    }
+
+    header {
+      background-color: rgba(255, 255, 255, 0.3); /* Fully transparent header */
+      color: brown;
+      margin-bottom: 16px;
+      border-radius: 64px;
+      padding: 4px 0;
+      text-align: center;
+      font-size: 64px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 16px;
+            font-weight: bold;
+            color: #8b3c1f;
+        }
+
+    nav {
+      background-color: rgba(255, 255, 255, 0.3);
+      margin-bottom: 16px;
+      padding: 4px;
+      border-radius: 64px;
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+      flex-wrap: wrap;
+    }
+
+    nav :hover{
+       color: #FFFFFF;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      margin: 8px;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 120px 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            border-radius: 64px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: bold;
+            color: #8b3c1f;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 2px ;
+            font-size: 32px;
+            color: #8b3c1f;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .modern-clear-btn {
+            padding: 12px 24px;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .modern-clear-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            background: white;
+            margin-top: -60px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .left, .right {
+            flex: 1;
+        }
+
+        .left h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .right {
+            text-align: center;
+        }
+
+        .product-card {
+            background: #f8f5f0;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .product-card img {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .signup {
+            margin-top: 20px;
+        }
+
+        .signup button {
+            background: #e6712c;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .signup button:hover {
+            background: #c65a23;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 40px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">KarigarSetu</div>
+    </header>
+        <nav a>
+            <a href="About Us.html"><button class="modern-clear-btn" onclick="redirect()">About us</button></a>
+            <a href="upload.html"><button class="modern-clear-btn" onclick="redirect()">Sell your product</button></a>
+            <a href="Stories.html"><button class="modern-clear-btn" onclick="redirect()">Stories</button></a>
+            <a href="marketplace.html"><button class="modern-clear-btn" onclick="redirect()">Marketplace</button></a>
+            <button class="modern-clear-btn" onclick="redirect()">Back to Login page</button>
+        </nav a>
+    <script>
+        function redirect() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <section class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="14.mp4" type="video/mp4">
+        </video>
+        <h1>Artisan's Handicrafts</h1>
+        <p>Crafted by hands, with stories they weave, local hearts stitch magic, you won’t believe.</p>
+    </section>
+</body>
+</html>

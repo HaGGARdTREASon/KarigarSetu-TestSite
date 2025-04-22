@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <meta charset="UTF-8">
+    <style>
+    /* General Styles */
+    html, body {
+      height: 100%; /* Ensures the background covers the entire viewport */
+      margin: 0;
+      padding: 0;
+    }
+        body {
+            font-family: Sans, sans;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("11.jpg"); /* Replace this with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.3); /* Add some transparency */
+            padding: 20px;
+            border-radius: 64px;
+            box-shadow: 16px 32px 64px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .login-container img {
+            width: auto; 
+            height: auto; 
+            border-radius: 64px; 
+        }
+        .login-container h1 {
+            color: #333;
+        }
+        .login-container h2 {
+            color: #666;
+            border-radius: 32px;
+        }
+        .login-container input[type="email"],
+        .login-container input[type="password"] {
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 90%;
+            padding: 16px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 32px;
+        }
+        .login-container button {
+            margin-bottom: 16px;
+            padding: 12px 24px;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: white;
+            border: none;
+            border-radius: 32px;
+	    position: center;
+            font-weight: bold;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .login-container button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            margin-top: 16px;
+        }
+        .login-container .forgot-password {
+            display: block;
+            color: #000000;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .login-container .forgot-password:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function redirectAfterLogin(event) {
+            event.preventDefault(); // Prevent form submission
+            window.location.href = "home.html#";
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <img src="Logo 3.jpg" alt="User Image">
+        <h1>Empowering Artisans and Enriching The Globe</h1>
+        <h2>Please enter your details for login</h2>
+        
+        <form onsubmit="redirectAfterLogin(event);">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button> <!-- Login button moved below the password field -->
+            <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
+        </form>
+    </div>
+</body>
+</html>
