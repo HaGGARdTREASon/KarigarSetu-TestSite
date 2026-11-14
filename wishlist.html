@@ -4,123 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wishlist</title>
+    <link rel="stylesheet" href="style.css">
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      margin: 32px;
-      background-image: url('11.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: background-color 0.4s ease-in-out;
-    }
-
-    header {
-      background-color: rgba(255, 255, 255, 0.3);
-      color: brown;
-      margin-bottom: 8px;
-      border-radius: 128px;
-      padding: 15px;
-      text-align: center;
-      font-size: 28px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.74);
-    }
-
-    nav {
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: 16px;
-      border-radius: 64px;
-      text-align: center;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      text-decoration: none;
-    }
-
-    .modern-clear-btn {
-      padding: 12px 24px;
-      background: linear-gradient(90deg, #ff7e5f, #feb47b);
-      color: white;
-      border: none;
-      border-radius: 50px;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .modern-clear-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    .container {
-      padding: 20px;
-    }
-
-    .wishlist-items {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-    }
-
-    .wishlist-items li {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .remove-btn {
-      background-color: red;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      cursor: pointer;
-      border-radius: 5px;
-      margin-left: 10px;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 64px;
-    }
-
-    .product-card {
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: 20px;
-      text-align: center;
-      border-radius: 32px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-    .product-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    footer {
-      background-color: #eee;
-      padding: 10px;
-      text-align: center;
-    }
-
-    footer p {
-      margin: 0;
-      color: #333;
-    }
+body { padding: 20px; }
   </style>
 </head>
 <body>
@@ -156,8 +42,8 @@
 
       wishlist.forEach((item, index) => {
         let listItem = document.createElement('li');
-        listItem.innerHTML = `${item.name} - ₹${parseFloat(item.price)} 
-          <button class="remove-btn" onclick="removeFromWishlist(${index})">Remove</button>`;
+        const thumb = item.image ? `<img class="item-thumb" src="${item.image}" alt="">` : "";
+        listItem.innerHTML = `${thumb}<span class="item-name">${item.name}</span><span class="item-price">₹${parseFloat(item.price)}</span> <button class="remove-btn" onclick="removeFromWishlist(${index})">Remove</button>`;
         wishlistList.appendChild(listItem);
         total += parseFloat(item.price);
       });
