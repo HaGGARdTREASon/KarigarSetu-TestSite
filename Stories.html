@@ -4,153 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Stories</title>
+    <link rel="stylesheet" href="style.css">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Algerian', algerian;
-      margin: 32px;
-      border-radius: 64px;
-      font-size: 32px;
-      padding: 0px;
-      background-image: url('11.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: background-color 0.4s ease-in-out;
-    }
-
-    header {
-      background-color: rgba(255, 255, 255, 0.3);
-      color: brown;
-      margin-bottom: 8px;
-      border-radius: 128px;
-      padding: 15px 0;
-      text-align: center;
-      font-size: 64px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.74);
-    }
-     
-    .logo {
-            font-size: 64px;
-            margin-bottom: 16px;
-            font-weight: bold;
-            color: #8b3c1f;
-        }
-
-    .logo {
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #333;
-    }
-
-    nav a.active {
-      border-bottom: 2px solid #333;
-    }
-
-    main {
-      display: flex;
-      padding: 40px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      flex: 1;
-    }
-
-    .card {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .card img {
-      width: 100%;
-      display: block;
-      border-radius: 8px;
-    }
-
-    .overlay {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      background: rgba(0,0,0,0.5);
-      color: white;
-      padding: 6px 12px;
-      border-radius: 4px;
-      font-size: 16px;
-    }
-
-    /* Popup Styling */
-    .popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60%;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      z-index: 1000;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .popup textarea {
-      width: 100%;
-      height: 100px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 8px;
-    }
-
-    .popup button {
-      padding: 10px 20px;
-      background-color: #333;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    /* Popup Overlay */
-    .popup-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-      display: none;
-    }
+body { padding: 20px; }
+main { padding: 24px 0; }
   </style>
 </head>
 <body>
   <header>
     <div>Stories</div>
-    <nav>
-    </nav>
   </header>
 
   <main>
@@ -203,22 +65,7 @@
   </div>
 
   <footer>
-    <div class="footer-column">
-      <h3></h3>
-      <p></p>
-    </div>
-    <div class="footer-column">
-      <h3></h3>
-      <p></p>
-    </div>
-    <div class="footer-column">
-      <h3></h3>
-      <p></p>
-    </div>
-    <div class="footer-column">
-      <h3></h3>
-      <p></p>
-    </div>
+    <a href="home.html"><button class="modern-clear-btn" type="button">Back to Main Page</button></a>
   </footer>
 
   <script>
