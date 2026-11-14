@@ -4,123 +4,14 @@
   <title>Upload Product</title>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
   <style>
-    /* General Styles */
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    body {
-      font-family: 'Arial', arial;
-      color: brown;
-      margin: 32px;
-      font-size: 32px;
-      background-image: url('11.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      font-weight: bold;
-    }
-
-    .container {
-      background: rgba(255, 255, 255, 0.3);
-      padding: 32px;
-      border-radius: 64px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      text-align: center;
-      width: 384px;
-      margin-bottom: 32px;
-    }
-
-    .link-container {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      margin-top: 32px;
-    }
-
-    .link-box {
-      background: rgba(255, 255, 255, 0.5);
-      padding: 32px;
-      border-radius: 64px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      text-align: center;
-      width: 250px;
-      font-size: 24px;
-      font-weight: bold;
-      transition: transform 0.3s ease;
-    }
-
-     .upload-button {
-      font-family: 'Arial', arial;
-      color: brown;
-      margin: 32px;
-      font-size: 32px;
-      background-image: url('11.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      font-weight: bold;
-    }
-
-    .link-box:hover {
-      transform: scale(1.1);
-    }
-
-    a {
-      text-decoration: none;
-      color: brown;
-    }
-
-    input, textarea {
-      width: 90%;
-      margin: 10px 0;
-      padding: 10px;
-      border: none;
-      border-radius: 32px;
-      background: rgba(255, 255, 255, 0.5);
-      font-size: 16px;
-    }
-
-    input::placeholder, textarea::placeholder {
-      font-family: 'Arial', arial;
-      color: rgba(139, 69, 19, 0.7);
-    }
-
-    input:focus, textarea:focus {
-      border-color: rgba(255, 255, 255, 0.8);
-      outline: none;
-    }
-
-    .custom-file-upload, .upload-button {
-      display: inline-block;
-      padding: 10px 20px;
-      cursor: pointer;
-      background: linear-gradient(90deg, #ff7e5f, #feb47b);
-      color: white;
-      border-radius: 32px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      font-size: 16px;
-      transition: transform 0.3s ease;
-      border: none;
-      margin: 10px 0;
-    }
-
-    .custom-file-upload:hover,
-    .upload-button:hover {
-      transform: scale(1.05);
-    }
-
-    #status {
-      font-size: 16px;
-      color: green;
-      margin-top: 10px;
-    }
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+}
   </style>
 </head>
 <body>
