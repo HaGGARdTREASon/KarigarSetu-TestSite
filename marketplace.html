@@ -4,146 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marketplace</title>
+    <link rel="stylesheet" href="style.css">
   <style>
-    /* General Styles */
-    html, body {
-      height: 100%; /* Ensures the background covers the entire viewport */
-      margin: 0;
-      padding: 0;
-    } 
+body { padding: 20px; }
 
-    body {
-      font-family: 'Algerian', algerian;
-      margin: 32px;
-      padding: 0px;
-      background-image: url('11.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      font-weight: bold;
-      transition: background-color 0.4s ease-in-out;
-    }
-
-    header {
-      background-color: rgba(255, 255, 255, 0.3);
-      color: black;
-      margin-bottom: 8px;
-      border-radius: 128px;
-      padding: 15px 0;
-      text-align: center;
-      font-size: 64px;
-      font-weight:bold;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.74);
-    }
-     
-    .logo {
-            font-size: 64px;
-            margin-bottom: 16px;
-            color: #8b3c1f;
-        }
-
-    nav {
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: 16px;
-      border-radius: 64px;
-      text-align: center;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      margin: 8px;
-    }
-
-    nav a:hover {
-      color: #000;
-    }
-
-    .icon {
-      width: 32px;
-      cursor: pointer;
-    }
-
-    .container {
-      padding: 20px;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 64px;
-    }
-
-    .product-card {
-      background-color: rgba(255, 255, 255, 0.5);
-      border: 32px;
-      padding: 20px;
-      text-align: center;
-      border-radius: 32px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-    .product-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .product-card img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 16px;
-      margin-bottom: 32px;
-    }
-
-    .product-card h3 {
-      margin: 10px 0;
-      font-size: 24px;
-    }
-
-    .product-card p {
-      font-size: 16px;
-      color: #555;
-    }
-
-    .product-card button {
-      margin-bottom: 16px;
-      padding: 12px 24px;
-      background: linear-gradient(90deg, #ff7e5f, #feb47b);
-      color: white;
-      border: none;
-      border-radius: 50px;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .product-card button:hover {
-      transform: scale(1.1);
-      background-color: #7A4A01;
-    }
-
-    footer {
-      background: #eee;
-      padding: 64px;
-      text-align: center;
-      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.64);
-    }
-
-    footer p {
-      margin: 0;
-      color: #333;
-    }
+/* Restore original full-width marketplace layout (clay styling kept) */
+.container {
+  width: auto;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(250, 240, 226, 0.4);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 30px rgba(133, 98, 60, 0.22),
+              inset 0 2px 8px rgba(255, 255, 255, 0.35);
+}
+.product-grid { gap: 40px; }
+header { font-size: clamp(40px, 6vw, 62px); padding: 20px 28px; }
+header .logo { font-size: clamp(40px, 6.5vw, 64px); }
   </style>
 </head>
 <body>
@@ -166,29 +45,29 @@
       <img src="30.jpg" alt="Product 1">
       <h3>Product Name 1</h3>
       <p>₹1399.00</p>
-      <button onclick="addToCart('Product Name 1', 1399)">Add to Cart</button>
-      <button onclick="addToWishlist('Product Name 1', 1399)">Add to Wishlist</button>
+      <button onclick="addToCart('Product Name 1', 1399, '30.jpg')">Add to Cart</button>
+      <button onclick="addToWishlist('Product Name 1', 1399, '30.jpg')">Add to Wishlist</button>
     </div>
     <div class="product-card">
       <img src="33.jpg" alt="Product 2">
       <h3>Product Name 2</h3>
       <p>₹1699.00</p>
-      <button onclick="addToCart('Product Name 2', 1699)">Add to Cart</button>
-      <button onclick="addToWishlist('Product Name 2', 1699)">Add to Wishlist</button>
+      <button onclick="addToCart('Product Name 2', 1699, '33.jpg')">Add to Cart</button>
+      <button onclick="addToWishlist('Product Name 2', 1699, '33.jpg')">Add to Wishlist</button>
     </div>
     <div class="product-card">
       <img src="32.jpg" alt="Product 3">
       <h3>Product Name 3</h3>
       <p>₹1999.00</p>
-      <button onclick="addToCart('Product Name 3', 1999)">Add to Cart</button>
-      <button onclick="addToWishlist('Product Name 3', 1999)">Add to Wishlist</button>
+      <button onclick="addToCart('Product Name 3', 1999, '32.jpg')">Add to Cart</button>
+      <button onclick="addToWishlist('Product Name 3', 1999, '32.jpg')">Add to Wishlist</button>
     </div>
     <div class="product-card">
       <img src="31.jpg" alt="Product 4">
       <h3>Product Name 4</h3>
       <p>₹1599.00</p>
-      <button onclick="addToCart('Product Name 4', 1599)">Add to Cart</button>
-      <button onclick="addToWishlist('Product Name 4', 1599)">Add to Wishlist</button>
+      <button onclick="addToCart('Product Name 4', 1599, '31.jpg')">Add to Cart</button>
+      <button onclick="addToWishlist('Product Name 4', 1599, '31.jpg')">Add to Wishlist</button>
     </div>
   </div>
 </div>
@@ -197,15 +76,15 @@
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
-  function addToCart(productName, price) {
-    cart.push({ name: productName, price: price });
+  function addToCart(productName, price, image = '') {
+    cart.push({ name: productName, price: price, image: image });
     localStorage.setItem('cart', JSON.stringify(cart));
     document.getElementById('cart-count').innerText = cart.length;
     alert(`${productName} has been added to your cart.`);
   }
 
-  function addToWishlist(productName, price) {
-    wishlist.push({ name: productName, price: price });
+  function addToWishlist(productName, price, image = '') {
+    wishlist.push({ name: productName, price: price, image: image });
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
     document.getElementById('wishlist-count').innerText = wishlist.length;
     alert(`${productName} has been added to your wishlist.`);
